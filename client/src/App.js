@@ -1,9 +1,10 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { NoMatch, Saved, Search } from './pages'
-import Nav from './components/Nav'
-import Hero from './components/Hero'
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Wrapper from "./components/Wrapper";
 
 import NoMatch from "./pages/NoMatch";
 import Search from "./pages/Search";
@@ -15,10 +16,19 @@ function App() {
       <div>
         <Nav />
         <Hero />
-          <Route exact path="/" component={Search} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/saved" component={Saved} />
-          <Route exact path="/noMatch" component={NoMatch} />
+        <Wrapper>
+          <Switch>
+            <Route exact path={["/", "/search"]}>
+              <Search />
+            </Route>
+            <Route exact path="/saved">
+              <Saved />
+            </Route>
+            <Route>
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Wrapper>
       </div>
     </Router>
   );

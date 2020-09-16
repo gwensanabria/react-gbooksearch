@@ -59,15 +59,15 @@ class Results extends Component {
                       <div>
                         <a
                           href={result.link}
-                          className="btn badge-pill btn-outline-dark mt-3"
+                          className="btn btn-outline-dark mt-3"
                           target="_blank" 
                           rel="noopener noreferrer"
                         >
-                          View
+                          Details
                         </a>
                         <button
                           onClick={() => this.handleSave(result)}
-                          className="btn badge-pill btn-outline-warning mt-3 ml-3"
+                          className="btn btn-outline-info mt-3 ml-3"
                         >
                           {this.state.bookList
                             .map((book) => book._id)

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 function Nav() {
     
     return (
-        <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <nav style={{backgroundColor: 'lavender'}} className='navbar navbar-expand-lg'>
             <div className='container'>
-                <Link className='navbar-brand' to='/'>Boogle Book Search</Link>
-                <Link className ='nav-link' to="/search">Search</Link>
-                <Link className='nav-link'to="/saved">Saved</Link>
+                <Link style={{color: 'black'}} className='navbar-brand' to='/'>Google Book Search</Link>
+                <Link style={{color: 'black'}} className ='nav-link' to="/search">Search</Link>
+                <Link style={{color: 'black'}} className='nav-link'to="/saved">Saved</Link>
             </div>
         </nav>
     )

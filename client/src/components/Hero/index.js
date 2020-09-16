@@ -3,9 +3,9 @@ import React from "react";
 
 function Hero() {
     return (
-        <div className="jumbotron text-center">
+        <div style={{backgroundImage: `url(https://b9r8e6p9.stackpathcdn.com/wp-content/uploads/2019/05/CantStopMay2_feat-606x470.jpg)`}} className="jumbotron text-center">
             <div className="container text-light">
-                <h1 style={{color: 'black'}}>Google Book Search</h1>
+                <h1 style={{color: 'white'}}>Find New Books Now!</h1>
             </div>
         </div>
     );
