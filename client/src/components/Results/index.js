@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-import API from "../../utils";
+import API from "../../utils/API";
 
 class Results extends Component {
   state = {
@@ -60,7 +60,8 @@ class Results extends Component {
                         <a
                           href={result.link}
                           className="btn badge-pill btn-outline-dark mt-3"
-                          target="_blank"
+                          target="_blank" 
+                          rel="noopener noreferrer"
                         >
                           View
                         </a>
@@ -68,7 +69,7 @@ class Results extends Component {
                           onClick={() => this.handleSave(result)}
                           className="btn badge-pill btn-outline-warning mt-3 ml-3"
                         >
-                          {this.state.savedBooks
+                          {this.state.bookList
                             .map((book) => book._id)
                             .includes(result._id)
                             ? "Unsave"
@@ -86,3 +87,5 @@ class Results extends Component {
     );
   }
 }
+
+export default Results
