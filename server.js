@@ -1,6 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
-// const routes = require('')
+const routes = require('./routes')
+const dotenv = require('dotenv')
+require('./connect');
+
+//environment variables
+require('dotenv').config();
 
 const PORT = process.env.PORT || 8000
 const app = express()
@@ -10,11 +15,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 if (process.env.NODE_ENV === 'production') {
-    app/use(express.static('client/build'))
+    app.use(express.static('client/build'))
 }
 
 // API routes
-// app.use(routes)
+app.use(routes)
 
 // mogodb
 mongoose.connect(process.env.MONGOD_URI || 'mongod://localhost/googlebooks', { useNewUrlParser: true })
