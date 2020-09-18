@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging')
 app.use(routes)
 
 // mogodb
-mongoose.connect(process.env.MONGOD_URI || 'mongod://localhost/googlebooks', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', { useNewUrlParser: true })
 
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}`)
